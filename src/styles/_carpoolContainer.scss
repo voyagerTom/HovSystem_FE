@@ -1,0 +1,47 @@
+.carpool-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  margin: 10px 0;
+  border-bottom: 1px solid #eee; // 改用底線風格，更清爽
+
+  section {
+    time {
+      display: block;
+      color: #060606;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .route {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+
+      span {
+        color: #ccc;
+      }
+    }
+    .leftSeat {
+      display: block;
+      color: #f80a0a;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+  }
+
+  button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background: #000;
+    }
+  }
+}

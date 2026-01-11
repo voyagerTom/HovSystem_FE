@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 389;
+  font-style: normal;
+  font-variation-settings: "wdth" 86.7;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+// 這段應該要另立一個檔案
+.morePicture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+
+  button {
+    padding: 0.25rem 0.5rem;
+    font-size: 2rem;
+    border: none;
+    background-color: rgb(73, 0, 73);
+    color: white;
+    cursor: pointer;
+  }
+}
+
+/**
+這代表這是一個 主檔案 (Main Stylesheet)。
+它透過 @import 把其他功能模組（如導覽列、搜尋欄、頁尾等）的樣式表合併進來。這樣做可以讓程式碼結構清晰，方便維護。
+*/
+@import "./nav";
+// @import "./search";
+@import "./footer";
+@import "./carpoolContainer";
+// @import "./App";
