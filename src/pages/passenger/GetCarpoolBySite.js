@@ -11,7 +11,7 @@ import CarpoolContainer from "../../components/CarpoolContainer";
 // 實作查詢共乘功能
 const GetCarpoolBySite = () => {
   const location = useLocation();
-  const { userId } = location.state?.userId || 10; // 取得傳過來的參數
+  const userId = location.state?.userId || 10; // 取得傳過來的參數
 
   const [currentUserId, setCurrentUserId] = useState(userId);
   const [departFrom, setDepartFrom] = useState("taipei");
@@ -50,8 +50,7 @@ const GetCarpoolBySite = () => {
         搜尋
       </button>
       <div>
-        <label>當前userId</label>
-        <label>(目前可用ID為8,9,10,11,預設為9)</label>
+        <label>當前userId </label>
         <input
           type="text"
           value={currentUserId}
@@ -59,6 +58,8 @@ const GetCarpoolBySite = () => {
             setCurrentUserId(e.target.value);
           }}
         />
+
+        <label>(目前可用ID為8,9,10,11,預設為9，可自行更改)</label>
       </div>
 
       <div>

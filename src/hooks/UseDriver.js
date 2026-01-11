@@ -13,7 +13,8 @@ export const getMyCarpool = async (_driverId) => {
 export const cancelCarpool = async (_carpoolId, _driverId) => {
   console.log("hooks_cancelCarpool");
   const res = await DriverService.cancelCarpool(_carpoolId, _driverId);
-  console.log("hooks_完成請求");
-  console.log("hooks_", res.data);
-  return res.data;
+  console.log("hooks_完成請求cancelCarpool");
+  console.log("hooks_res", res);
+  console.log("hooks_res.data", res.data);
+  return res;
 };

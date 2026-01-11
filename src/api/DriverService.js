@@ -36,7 +36,7 @@ export const DriverService = {
         "ngrok-skip-browser-warning": "true",
       },
     });
-    return res.data;
+    return res;
   },
 };
 

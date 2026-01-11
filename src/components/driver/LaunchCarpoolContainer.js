@@ -2,7 +2,7 @@ import React from "react";
 import { getMyCarpool, cancelCarpool } from "../../hooks/UseDriver";
 
 // 這個容器用來裝已發布共乘的樣板
-const LaunchCarpoolContainer = ({ data, _carpoolId, _driverId }) => {
+const LaunchCarpoolContainer = ({ data, _carpoolId, _driverId, onRefresh }) => {
   return (
     <div className="carpool-card">
       <section>
@@ -16,14 +16,22 @@ const LaunchCarpoolContainer = ({ data, _carpoolId, _driverId }) => {
         <p>總座位數: {data.pickAmt}</p>
         <p>已預訂座位數: {data.orderAmt}</p>
       </section>
-      <button
-        onClick={() => {
-          console.log("這是取消功能");
-          cancelCarpool(data.id, data.driverId);
-        }}
-      >
-        取消共乘
-      </button>
+
+      {/* 這段用來判斷，當查詢已取消共乘時，不要在呈現取消按鈕 */}
+      {data.isCancel === "N" && (
+        <button
+          onClick={async () => {
+            console.log("取消已發布共乘功能_啟動");
+            const confirmCancel = window.confirm("確定要取消此共乘嗎？");
+            if (!confirmCancel) return;
+            await cancelCarpool(data.id, data.driverId);
+            console.log("準備啟動onfresh");
+            onRefresh();
+          }}
+        >
+          取消共乘
+        </button>
+      )}
     </div>
   );
 };
