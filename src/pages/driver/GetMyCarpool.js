@@ -36,10 +36,6 @@ const GetMyCarpool = ({ isHis }) => {
     fetchData();
   }, [isHis, currentUserId]);
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, [launchedCar]);
-
   return (
     <div>
       查看已發布的共乘車次

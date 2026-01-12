@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 const Nav = () => {
   const [openMenu, setOpenMenu] = useState(null);
   // 從這邊控制所以頁面的user;
-  const userName = "湯姆哥";
+  const userName = "澎湖金城武";
   const userId = 9;
   const toggleDropdown = (menu) => {
     setOpenMenu(openMenu === menu ? null : menu);

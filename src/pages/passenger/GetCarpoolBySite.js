@@ -19,11 +19,6 @@ const GetCarpoolBySite = () => {
   const [orderRes, setOrderRes] = useState("");
 
   const departFromList = ["Taipei", "TaiChung", "Yilan"];
-  //   [
-  //   { value: "PSG", label: "乘客" },
-  //   { value: "DRIVER", label: "司機" },
-  //   { value: "ADMIN", label: "管理員" },
-  // ];
 
   const carpoolHandler = (data) => {
     setCarpools(data);

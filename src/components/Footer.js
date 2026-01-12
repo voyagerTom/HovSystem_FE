@@ -6,7 +6,7 @@ import React from "react";
  */
 
 const Footer = () => {
-  return <div className="footer">High Occupancy Vechile Tom Chen 2025@@</div>;
+  return <div className="footer">High Occupancy Vehicle • Tom Chen 2025 ©</div>;
 };
 
 export default Footer;
