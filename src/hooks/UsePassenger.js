@@ -18,6 +18,8 @@ export const checkMyCarpool = async (_userId, setCarpools) => {
   console.log("hooks_checkMyCarpool");
   const res = await PassengerService.checkMyCarpool(_userId);
   console.log("hooks_完成請求");
+  console.log("res", res);
+  console.log("res.data", res.data);
   setCarpools(res);
   setCarpools(res.carpoolList);
   return res.carpoolList;

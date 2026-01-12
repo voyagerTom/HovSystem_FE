@@ -1,6 +1,6 @@
 import axios from "axios";
 
-//時做API呼叫I呼叫
+//實做API呼叫
 // const passengAPI = "https://d74a348b05f1.ngrok-free.app/passenger";
 const passengAPI = "http://localhost:8099/passenger";
 

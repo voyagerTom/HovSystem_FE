@@ -17,6 +17,14 @@ const GetCarpoolBySite = () => {
   const [departFrom, setDepartFrom] = useState("taipei");
   const [carpools, setCarpools] = useState("");
   const [orderRes, setOrderRes] = useState("");
+
+  const departFromList = ["Taipei", "TaiChung", "Yilan"];
+  //   [
+  //   { value: "PSG", label: "乘客" },
+  //   { value: "DRIVER", label: "司機" },
+  //   { value: "ADMIN", label: "管理員" },
+  // ];
+
   const carpoolHandler = (data) => {
     setCarpools(data);
   };
@@ -36,11 +44,16 @@ const GetCarpoolBySite = () => {
     <div>
       <h2>this Passenger Page</h2>
       <label>出發地</label>
-      <input
-        type="text"
+
+      <select
         value={departFrom}
         onChange={(e) => setDepartFrom(e.target.value)}
-      />
+      >
+        {departFromList.map((d) => (
+          <option>{d}</option>
+        ))}
+      </select>
+
       <button
         onClick={() => {
           console.log("getCarpoolBySite 被點擊");
@@ -52,7 +65,7 @@ const GetCarpoolBySite = () => {
       <div>
         <label>當前userId </label>
         <input
-          type="text"
+          type="number"
           value={currentUserId}
           onChange={(e) => {
             setCurrentUserId(e.target.value);
