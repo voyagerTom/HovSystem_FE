@@ -17,15 +17,11 @@ const Nav = () => {
       <p> 目前使用者ID: {userName} </p>
       <p> 目前使用者ID: {userId} </p>
       <ul>
-        {/* <li>
-          <Link to="/passenger">乘客</Link>
+        <li className="passengerBar">
+          <Link to="/" state={{ userId: userId }}>
+            首頁
+          </Link>
         </li>
-        <li>
-          <Link to="/driver">司機</Link>
-        </li>
-        <li>
-          <Link to="/admin">管理員</Link>
-        </li> */}
 
         {/* ------------------------------------- */}
         {/* 乘客選單 - 有子功能 */}
@@ -36,19 +32,22 @@ const Nav = () => {
             <ul>
               <li>
                 <Link
-                  to="/passenger/getCarpoolBySite"
+                  to="/passenger/get-carpool-by-site"
                   state={{ userId: userId }}
                 >
                   查詢共乘
                 </Link>
               </li>
               <li>
-                <Link to="/passenger/checkMyCarpool" state={{ userId: userId }}>
+                <Link
+                  to="/passenger/check-my-carpool"
+                  state={{ userId: userId }}
+                >
                   查看已預訂的共乘
                 </Link>
               </li>
               <li>
-                <Link to="/passenger/payment">申請成為司機</Link>
+                <Link to="/passenger/apply-for-driver">申請成為司機</Link>
               </li>
             </ul>
           )}

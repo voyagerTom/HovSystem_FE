@@ -7,8 +7,9 @@ import Admin from "./pages/Admin";
 import "./styles/style.scss";
 import CheckMyCarpool from "./pages/passenger/CheckMyCarpool";
 import GetMyCarpool from "./pages/driver/GetMyCarpool";
-
 import GetCarpoolBySite from "./pages/passenger/GetCarpoolBySite";
+
+import HomePage from "./pages/HomePage";
 
 function App() {
   const driverRoute = "/driver";
@@ -16,13 +17,17 @@ function App() {
     <div className="App">
       <Nav />
       <Routes>
-        <Route path="/passenger" element={<Passenger />} />
+        <Route path="/" element={<HomePage />} />
         <Route
-          path="/passenger/getCarpoolBySite"
+          path="/passenger/get-carpool-by-site"
           element={<GetCarpoolBySite />}
         />
-        <Route path="/passenger/checkMyCarpool" element={<CheckMyCarpool />} />
-        {/* <Route path="/passenger/checkMyCarpool" element={<可以模仿添加子功能，記得去NAV添加 />} /> */}
+        <Route
+          path="/passenger/check-my-carpool"
+          element={<CheckMyCarpool />}
+        />
+
+        <Route path="/passenger/apply-for-driver" element={<Passenger />} />
 
         {/* 以下是司機Path */}
         <Route path={driverRoute} element={<Driver />} />
@@ -31,10 +36,7 @@ function App() {
           // element={<GetMyCarpool />}
           element={<GetMyCarpool isHis="" />}
         />
-        <Route
-          path={`${driverRoute}/launchcarpool`}
-          element={<GetCarpoolBySite />}
-        />
+        <Route path={`${driverRoute}/launchcarpool`} element={<Driver />} />
         <Route
           path={`${driverRoute}/getmyhiscarpool`}
           // element={GetMyCarpool("his")}
