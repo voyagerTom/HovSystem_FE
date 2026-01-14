@@ -1,7 +1,7 @@
 import axios from "axios";
 
 //實做API呼叫
-// const passengAPI = "https://8c8f9624f031.ngrok-free.app/passenger";
+// const passengAPI = "https://16c2944aec0d.ngrok-free.app/passenger";
 const passengAPI = "http://localhost:8099/passenger";
 
 // 這段headers是為了 ngrok

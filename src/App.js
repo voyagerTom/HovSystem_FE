@@ -10,6 +10,7 @@ import GetMyCarpool from "./pages/driver/GetMyCarpool";
 import GetCarpoolBySite from "./pages/passenger/GetCarpoolBySite";
 
 import HomePage from "./pages/HomePage";
+import LaunchCarpool from "./pages/driver/LaunchCarpool";
 
 function App() {
   const driverRoute = "/driver";
@@ -33,14 +34,17 @@ function App() {
         <Route path={driverRoute} element={<Driver />} />
         <Route
           path={`${driverRoute}/getmycarpool`}
-          // element={<GetMyCarpool />}
           element={<GetMyCarpool isHis="" />}
         />
-        <Route path={`${driverRoute}/launchcarpool`} element={<Driver />} />
+
         <Route
           path={`${driverRoute}/getmyhiscarpool`}
-          // element={GetMyCarpool("his")}
           element={<GetMyCarpool isHis="his" />}
+        />
+
+        <Route
+          path={`${driverRoute}/launchcarpool`}
+          element={<LaunchCarpool />}
         />
 
         <Route path="/admin" element={<Admin />} />

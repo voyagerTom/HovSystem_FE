@@ -34,7 +34,7 @@ const CheckMyCarpool = () => {
 
       <label>使用者ID</label>
       <input
-        type="text"
+        type="number"
         value={currentUserId}
         onChange={(e) => setCurrentUserId(e.target.value)}
       />

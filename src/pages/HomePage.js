@@ -4,16 +4,16 @@ const HomePage = () => {
   return (
     <div style={styles.container}>
       <div style={styles.card}>
-        <h1 style={styles.title}>🚘 共乘系統</h1>
+        <h1 style={styles.title}>🚘 HOV共乘系統</h1>
         <p style={styles.subtitle}>歡迎使用本平台</p>
 
         <div style={styles.notice}>
           <strong>
-            <p>公佈欄：</p>
+            <p>高乘載管制期間 公佈欄：</p>
           </strong>
           <ul>
-            {/* <li>乘客搜尋共乘車次</li>
-            <li>司機發布與管理共乘</li> */}
+            <li>農曆年假: 2026/02/13-2026/02/15</li>
+            <li>228連假: 2026/02/27-2026/02/28</li>
           </ul>
         </div>
       </div>

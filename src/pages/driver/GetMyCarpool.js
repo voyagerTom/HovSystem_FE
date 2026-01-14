@@ -1,5 +1,5 @@
 // 顯示司機所發布的共乘
-// 查看已發布的共乘車次;
+// 查看已發布的共乘車次(包含歷史資料);
 import { useState, useEffect } from "react";
 import React from "react";
 import { useLocation } from "react-router-dom";
