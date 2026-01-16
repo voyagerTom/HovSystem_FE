@@ -40,6 +40,17 @@ export const DriverService = {
     });
     return res;
   },
+
+  launchCarpool: async (_orderForm) => {
+    console.log("要呼叫API", _orderForm);
+    let launchCarpoolAPI = `${driverAPI}/launchcarpool`;
+    const res = await axios.post(launchCarpoolAPI, _orderForm, {
+      headers: {
+        "ngrok-skip-browser-warning": "true",
+      },
+    });
+    return res;
+  },
 };
 
 // export default DriverService;

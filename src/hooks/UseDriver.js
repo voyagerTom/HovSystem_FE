@@ -18,3 +18,11 @@ export const cancelCarpool = async (_carpoolId, _driverId) => {
   console.log("hooks_res.data", res.data);
   return res;
 };
+
+export const launchCarpool = async (_orderForm) => {
+  console.log("hooks_launchCarpool");
+  console.log("_orderForm", _orderForm);
+  const res = await DriverService.launchCarpool(_orderForm);
+  console.log(res.data);
+  return res.data;
+};
