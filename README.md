@@ -1,5 +1,12 @@
 # Getting Started with Create React App
 
+Please execute commands below after you pull down this project to your local.
+npm install
+npm install axios
+npm start
+
+## -----------------------------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
