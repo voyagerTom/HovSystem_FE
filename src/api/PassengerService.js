@@ -12,6 +12,7 @@ const passengAPI = "http://localhost:8099/passenger";
 export const PassengerService = {
   getCarpoolBySite: async (_departFrom) => {
     let getCarpoolBySiteAPI = `${passengAPI}/getcarpoolbysite`;
+    console.log(getCarpoolBySiteAPI);
     try {
       // console.log("SVC_getCarpoolBySiteAPI: " + getCarpoolBySiteAPI);
       const res = await axios.get(getCarpoolBySiteAPI, {
@@ -27,7 +28,7 @@ export const PassengerService = {
       if (error.response && error.response.status === 302) {
         console.warn(
           "發生 302 重新導向，目標位址為:",
-          error.response.headers.location
+          error.response.headers.location,
         );
       }
       throw error;
@@ -79,7 +80,7 @@ export const PassengerService = {
       if (err.response?.status === 409) {
         alert(
           err.response.data.message ||
-            "訂單狀態已變更，無法取消，就是重複取消MDFK"
+            "訂單狀態已變更，無法取消，就是重複取消MDFK",
         );
       }
     }

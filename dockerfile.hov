@@ -1,7 +1,10 @@
 from node:20-alpine
 
 WORKDIR /app
-RUN npm install, npm install axios
+
+COPY package*.json ./
+RUN npm install && npm install axios && apk add curl 
+
 
 # 複製其餘原始碼
 COPY . .
@@ -10,4 +13,14 @@ COPY . .
 EXPOSE 3000
 
 # 啟動開發伺服器
+
 CMD ["npm", "start"]
+
+
+# dockerfile 啟動指令
+# docker build -f ./dockerfile.hov -t hov_fe_img:1.0 .
+
+
+# 容器創建指令
+# docker run -d -p 3000:3000 --name hov_fe hov_fe_img:1.0
+
