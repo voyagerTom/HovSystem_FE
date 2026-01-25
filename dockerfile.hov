@@ -2,7 +2,7 @@ from node:20-alpine
 
 WORKDIR /app
 COPY package*.json ./
-RUN npm install && npm install axios
+RUN npm install && npm install axios && apk add curl 
 
 
 # 複製其餘原始碼
