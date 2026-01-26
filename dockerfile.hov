@@ -22,5 +22,5 @@ CMD ["npm", "start"]
 
 
 # 容器創建指令
-# docker run -d -p 3000:3000 --name hov_fe hov_fe_img:1.0
-
+# docker run -d -p 3000:3000 --name hov_fe -v ${pwd}:/app    hov_fe_img:1.0
+#  docker run -d -p 3000:3000 --name hov_fe -v ${PWD}:/app -v /app/node_modules -e CHOKIDAR_USEPOLLING=true hov_fe_img:1.0

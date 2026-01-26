@@ -29,6 +29,10 @@ Q1: 當使用者使用了前端服務，開啟UI，點擊按鈕，觸發了axios
 
 A1: 當user點擊UI時，所發起請求來源是user端，故若後端API設為 http://172.17.0.3...， 即表示 192.168.2.1直接呼叫172.17.0.3的資源，這導致user端找不到BE資源，因為172.17.0.3容器內的IP，只有再容器內同網段，才能存取成功。
 
+A2: 請求一定都是user 端發起，只是路徑差異
+user -> 後端
+user -> 前端 -> 後端
+
 ## -----------------------------------------------------------------
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
