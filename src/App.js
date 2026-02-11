@@ -19,12 +19,10 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/passenger/carpools" element={<GetCarpoolBySite />} />
         <Route
-          path="/passenger/get-carpool-by-site"
-          element={<GetCarpoolBySite />}
-        />
-        <Route
-          path="/passenger/check-my-carpool"
+          // path="/passenger/check-my-carpool"
+          path={`/passenger/:userId/carpools`}
           element={<CheckMyCarpool />}
         />
 
@@ -32,20 +30,22 @@ function App() {
 
         {/* 以下是司機Path */}
         <Route path={driverRoute} element={<Driver />} />
-        <Route
+        {/* <Route
           path={`${driverRoute}/getmycarpool`}
+          element={<GetMyCarpool isHis="" />}
+        /> */}
+
+        <Route
+          path={`/${driverRoute}/:userId/carpools`}
           element={<GetMyCarpool isHis="" />}
         />
 
         <Route
-          path={`${driverRoute}/getmyhiscarpool`}
+          path={`${driverRoute}/hiscarpools`}
           element={<GetMyCarpool isHis="his" />}
         />
 
-        <Route
-          path={`${driverRoute}/launchcarpool`}
-          element={<LaunchCarpool />}
-        />
+        <Route path={`${driverRoute}/carpool`} element={<LaunchCarpool />} />
 
         <Route path="/admin" element={<Admin />} />
       </Routes>

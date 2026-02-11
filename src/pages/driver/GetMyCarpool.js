@@ -23,10 +23,10 @@ const GetMyCarpool = ({ isHis }) => {
     console.log("GetMyCarpool hooks_", res.object);
     // console.log("hisData ", isHis);
     if (isHis === "his") {
-      console.log("本次是歷史共乘");
+      console.log("查詢歷史(已取消)共乘");
       res = res.object.filter((caprool) => caprool.isCancel === "Y");
     } else {
-      console.log("本次是現行共乘");
+      console.log("查詢共乘");
       res = res.object.filter((caprool) => caprool.isCancel === "N");
     }
     setLaunchedCar(res);

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 //實做API呼叫
-// const passengAPI = "https://16c2944aec0d.ngrok-free.app/passenger";
+// const passengAPI = "https://849f-219-70-220-105.ngrok-free.app/passenger";
 const passengAPI = "http://localhost:8099/passenger";
 
 // 這段headers是為了 ngrok
@@ -50,7 +50,9 @@ export const PassengerService = {
   // 預定共乘
   ordercarpool: async (_userId, _carpoolId) => {
     console.log("PSG_SVC ordercarpool start ");
-    let checkMyCarpoolAPI = `${passengAPI}/ordercarpool`;
+    // let checkMyCarpoolAPI = `${passengAPI}/ordercarpool`;
+    let checkMyCarpoolAPI = `${passengAPI}/carpools/${_carpoolId}/bookings`;
+
     const res = await axios.post(checkMyCarpoolAPI, {
       userId: _userId,
       carpoolId: _carpoolId,
@@ -79,8 +81,7 @@ export const PassengerService = {
     } catch (err) {
       if (err.response?.status === 409) {
         alert(
-          err.response.data.message ||
-            "訂單狀態已變更，無法取消，就是重複取消MDFK",
+          err.response.data.message || "訂單狀態已變更，無法取消，就是重複取消",
         );
       }
     }

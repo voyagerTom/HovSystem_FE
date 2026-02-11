@@ -31,16 +31,14 @@ const Nav = () => {
           {openMenu === "passenger" && (
             <ul>
               <li>
-                <Link
-                  to="/passenger/get-carpool-by-site"
-                  state={{ userId: userId }}
-                >
+                <Link to="/passenger/carpools" state={{ userId: userId }}>
                   查詢共乘
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/passenger/check-my-carpool"
+                  // to="/passenger/check-my-carpool"
+                  to={`/passenger/${userId}/carpools`}
                   state={{ userId: userId }}
                 >
                   查看已預訂的共乘
@@ -60,18 +58,25 @@ const Nav = () => {
           {openMenu === "driver" && (
             <ul>
               <li>
-                <Link to="/driver/getmycarpool" state={{ userId: userId }}>
+                {/* <Link to="/driver/getmycarpool" state={{ userId: userId }}>
+                  查看已發布的共乘車次
+                </Link> */}
+
+                <Link
+                  to={`/driver/${userId}/carpools`}
+                  state={{ userId: userId }}
+                >
                   查看已發布的共乘車次
                 </Link>
               </li>
               <li>
-                <Link to="/driver/launchCarpool" state={{ userId: userId }}>
+                <Link to="/driver/carpool" state={{ userId: userId }}>
                   發布共乘
                 </Link>
               </li>
 
               <li>
-                <Link to="/driver/getmyhiscarpool" state={{ userId: userId }}>
+                <Link to="/driver/hiscarpools" state={{ userId: userId }}>
                   已取消的共乘車次
                 </Link>
               </li>
