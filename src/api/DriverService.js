@@ -2,12 +2,12 @@ import React from "react";
 import axios from "axios";
 
 //實做API呼叫
-// const driverAPI = "https://849f-219-70-220-105.ngrok-free.app/driver";
+// const driverAPI =
+//   "https://78c7-2402-7500-a44-12d3-8dbb-ec43-4daa-9633.ngrok-free.app/driver";
 let driverAPI = "http://localhost:8099/driver";
 
 export const DriverService = {
   getMyCarpool: async (_driverId) => {
-    // let getMyCarpoolAPI = `${driverAPI}/getmycarpool`;
     let getMyCarpoolAPI = `${driverAPI}/${_driverId}/carpools`;
     console.log("_driverId___ggg", _driverId);
     console.log("getMyCarpoolAPI", getMyCarpoolAPI);
@@ -32,7 +32,6 @@ export const DriverService = {
     }
   },
   cancelCarpool: async (_carpoolId, _driverId) => {
-    // let cancelCarpoolAPI = `${driverAPI}/cancelcarpool`;
     let cancelCarpoolAPI = `${driverAPI}/carpools/${_carpoolId}`;
 
     const res = await axios.patch(cancelCarpoolAPI, {
