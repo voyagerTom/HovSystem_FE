@@ -80,6 +80,7 @@ const GetCarpoolBySite = () => {
                 text="預定"
                 fun={async () => {
                   const carpoolId = d.id;
+                  console.log("d.id: " + d.id);
                   const res = await orderCarpool(currentUserId, carpoolId);
                   setOrderRes(res);
                   //觸發預定共乘API

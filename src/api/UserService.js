@@ -4,7 +4,7 @@ import React from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const usergAPI = "http://localhost:8099/user";
+const usergAPI = "http://localhost:8888/user";
 
 export const UserService = {
   login: async (username, password) => {
@@ -19,7 +19,7 @@ export const UserService = {
 };
 
 const instance = axios.create({
-  baseURL: "http://localhost:8099",
+  baseURL: "http://localhost:8888",
   withCredentials: true, // 重要：允許跨域攜帶 Cookie
 });
 

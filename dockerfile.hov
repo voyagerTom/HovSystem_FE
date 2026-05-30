@@ -2,8 +2,12 @@ from node:20-alpine
 
 WORKDIR /app
 
+# 1. 先安裝系統工具
+RUN apk add --no-cache curl
+
+# 2. 複製 package.json 並安裝依賴（利用 Docker 快取機制）
 COPY package*.json ./
-RUN npm install && npm install axios && apk add curl 
+RUN npm install && npm install axios 
 
 
 # 複製其餘原始碼

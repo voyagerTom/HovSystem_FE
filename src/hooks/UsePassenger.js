@@ -19,9 +19,8 @@ export const checkMyCarpool = async (_userId, setCarpools) => {
   const res = await PassengerService.checkMyCarpool(_userId);
   console.log("hooks_完成請求");
   console.log("res", res);
-  console.log("res.data", res.data);
-  setCarpools(res);
-  setCarpools(res.carpoolList);
+  console.log("res.data", res.object);
+  setCarpools(res.object);
   return res.carpoolList;
 };
 
@@ -39,7 +38,7 @@ export const cancelOrderCarpoolById = async (_carpoolId, _userId) => {
   console.log("hooks_cancelOrderCarpoolById");
   const res = await PassengerService.cancelOrderCarpoolById(
     _carpoolId,
-    _userId
+    _userId,
   );
   console.log("hooks_完成請求");
   console.log("cancelOrderCarpoolById ", res);
