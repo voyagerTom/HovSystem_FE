@@ -65,13 +65,14 @@ export const PassengerService = {
   },
 
   // 取消共乘
-  cancelOrderCarpoolById: async (_carpoolId, _userId) => {
+  cancelOrderCarpoolById: async (_carpoolMapId, _userId, carpoolData) => {
     console.log("PSG_SVC cancelordercarpoolbyid start ");
-    let cancelOrderCarpoolByIdAPI = `${passengAPI}/cancelordercarpoolbyid`;
+    let cancelOrderCarpoolByIdAPI = `${passengAPI}/carpool/order`;
     let res = null;
     try {
-      res = await axios.post(cancelOrderCarpoolByIdAPI, {
-        carpoolId: _carpoolId,
+      res = await axios.patch(cancelOrderCarpoolByIdAPI, {
+        carpoolId: carpoolData.id,
+        carpoolMapId: _carpoolMapId,
         userId: _userId,
 
         headers: {

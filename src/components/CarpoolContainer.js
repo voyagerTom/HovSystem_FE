@@ -4,7 +4,9 @@ const CarpoolContainer = ({ data, text, fun }) => {
   return (
     <div className="carpool-card">
       <section>
-        <p>共乘車次編號: {data.id}</p>
+        {data.cmId && <p>共乘(訂單)編號: {data.cmId}</p>}
+        {/* <p>共乘(訂單)編號: {data.cmId}</p> */}
+        <p>車次編號: {data.id}</p>
         <time>出發時間: {data.launchTime}</time>
         <div className="route">
           <strong>出發地: {data.site}</strong>

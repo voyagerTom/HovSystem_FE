@@ -23,7 +23,7 @@ const CheckMyCarpool = () => {
     if (!orderRes) return;
     let carpoolMap = orderRes.object;
     console.log("carpoolMap", carpoolMap);
-    let msg = `您的共乘車次 ${carpoolMap.cmid}已取消完成`;
+    let msg = `您的共乘車次 ${carpoolMap}已取消完成`;
 
     alert(msg);
   }, [orderRes]);
@@ -56,7 +56,11 @@ const CheckMyCarpool = () => {
               text="取消預定"
               fun={async () => {
                 console.log("取消共乘 測試觸發");
-                const res = await cancelOrderCarpoolById(d.id, currentUserId);
+                const res = await cancelOrderCarpoolById(
+                  d.cmId,
+                  currentUserId,
+                  d,
+                );
                 setOrderRes(res);
               }}
             />

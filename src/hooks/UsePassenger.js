@@ -34,11 +34,16 @@ export const orderCarpool = async (_userId, carpoolId) => {
 };
 
 //處理取消訂位
-export const cancelOrderCarpoolById = async (_carpoolId, _userId) => {
+export const cancelOrderCarpoolById = async (
+  _carpoolMapId,
+  _userId,
+  carpoolData,
+) => {
   console.log("hooks_cancelOrderCarpoolById");
   const res = await PassengerService.cancelOrderCarpoolById(
-    _carpoolId,
+    _carpoolMapId,
     _userId,
+    carpoolData,
   );
   console.log("hooks_完成請求");
   console.log("cancelOrderCarpoolById ", res);
