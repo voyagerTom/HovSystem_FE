@@ -4,7 +4,14 @@ import axios from "axios";
 
 // const passengAPI =
 //   "https://78c7-2402-7500-a44-12d3-8dbb-ec43-4daa-9633.ngrok-free.app/passenger";
-const passengAPI = "http://localhost:8099/passenger";
+
+//BE透過docker架設對外開放8888port
+let passengAPI = "http://localhost:8888/passenger";
+
+//BE透過docker架設不對外開放8888port
+// let passengAPI = "http://hov_ngx:80/passenger";
+
+// const passengAPI = "http://localhost:8099/passenger";
 
 // 這段headers是為了 ngrok
 //   headers: {
