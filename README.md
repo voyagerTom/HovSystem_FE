@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-Please execute commands below after you pull down this project to your local.
+Please execute commands below after you pull down this project to your local environment.
 
 npm install
 

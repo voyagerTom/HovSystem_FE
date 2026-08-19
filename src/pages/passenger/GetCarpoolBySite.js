@@ -14,7 +14,7 @@ const GetCarpoolBySite = () => {
   const userId = location.state?.userId || 10; // 取得傳過來的參數
 
   const [currentUserId, setCurrentUserId] = useState(userId);
-  const [departFrom, setDepartFrom] = useState("taipei");
+  const [departFrom, setDepartFrom] = useState("Taipei");
   const [carpools, setCarpools] = useState("");
   const [orderRes, setOrderRes] = useState("");
 
@@ -29,10 +29,12 @@ const GetCarpoolBySite = () => {
     if (orderRes.msg === "預約成功") {
       const yourCarpool = orderRes.object[0];
       msg = `${msg}  共乘車次: ${yourCarpool.carpoolId} \n 訂位編號: ${yourCarpool.cmid}`;
+
+      // 預約成功或失敗後，重新查詢共乘車次
+      getCarpoolBySite(departFrom, setCarpools);
     } else {
       msg = `${msg}  `;
     }
-
     alert(msg);
   }, [orderRes]);
   return (
@@ -45,7 +47,9 @@ const GetCarpoolBySite = () => {
         onChange={(e) => setDepartFrom(e.target.value)}
       >
         {departFromList.map((d) => (
-          <option>{d}</option>
+          <option key={d} value={d}>
+            {d}
+          </option>
         ))}
       </select>
 

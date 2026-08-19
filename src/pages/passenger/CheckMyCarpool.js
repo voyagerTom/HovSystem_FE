@@ -26,6 +26,7 @@ const CheckMyCarpool = () => {
     let msg = `您的共乘車次 ${carpoolMap}已取消完成`;
 
     alert(msg);
+    checkMyCarpool(currentUserId, setCarpools);
   }, [orderRes]);
 
   return (
