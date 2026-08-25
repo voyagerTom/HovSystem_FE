@@ -1,4 +1,3 @@
-import React from "react";
 import axios from "axios";
 
 //實做API呼叫
@@ -6,12 +5,12 @@ import axios from "axios";
 //   "https://78c7-2402-7500-a44-12d3-8dbb-ec43-4daa-9633.ngrok-free.app/driver";
 
 //BE透過docker架設對外開放8888port
-let driverAPI = "http://localhost:8888/driver";
+// let driverAPI = "http://localhost:8888/driver";
 
 //BE透過docker架設不對外開放8888port
 // let driverAPI = "http://hov_ngx:80/driver";
 
-// let driverAPI = "http://localhost:8099/driver";
+let driverAPI = "http://localhost:8099/driver";
 
 export const DriverService = {
   getMyCarpool: async (_driverId) => {

@@ -5,12 +5,12 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 //BE透過docker架設對外開放8888port
-let usergAPI = "http://localhost:8888/passenger";
+// let usergAPI = "http://localhost:8888/passenger";
 
 //BE透過docker架設不對外開放8888port
 // let usergAPI = "http://hov_ngx:80/driver";
 
-// const usergAPI = "http://localhost:8099/user";
+const usergAPI = "http://localhost:8099/user";
 
 export const UserService = {
   login: async (username, password) => {

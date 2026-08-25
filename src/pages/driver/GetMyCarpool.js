@@ -13,7 +13,7 @@ const GetMyCarpool = ({ isHis }) => {
 
   const location = useLocation();
   const userId = location.state?.userId || 10; // 取得傳過來的參數
-  const [currentUserId, setCurrentUserId] = useState(userId);
+  const [currentUserId] = useState(userId);
 
   let res = "666";
   const fetchData = async () => {
