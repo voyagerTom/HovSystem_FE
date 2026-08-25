@@ -10,11 +10,15 @@ npm start
 
 ### 執行dockerfile 創建image
 
-`docker build -f ./dockerfile.hov -t hov_fe_img:1.0 .`
+`docker build -f ./dockerfile.hov -t voyagerdk/hov_fe:1.0 .`
+
+### 或是直接拉取遠端image
+
+`docker pull voyagerdk/hov_fe:1.0`
 
 ### 創建容器
 
-`docker run -d -p 3000:3000 --name hov_fe hov_fe_img:1.0`
+`docker run -d -p 3000:3000 --name hov_fe voyagerdk/hov_fe:1.0`
 
 ### 情境記錄處:
 

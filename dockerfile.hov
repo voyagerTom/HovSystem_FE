@@ -22,7 +22,10 @@ CMD ["npm", "start"]
 
 
 # dockerfile 啟動指令
-# docker build -f ./dockerfile.hov -t hov_fe_img:1.0 .
+# docker build -f ./dockerfile.hov -t hov_fe:1.0 .
+
+# 修改img名稱，前面加上docker hub帳號，可以直接push到docker hub
+# docker tag hov_fe:1.0 voyagerdk/hov_fe:1.0
 
 
 # 容器創建指令
