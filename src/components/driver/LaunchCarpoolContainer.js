@@ -1,5 +1,4 @@
-import React from "react";
-import { getMyCarpool, cancelCarpool } from "../../hooks/UseDriver";
+import { cancelCarpool } from "../../hooks/UseDriver";
 
 // 這個容器用來裝已發布共乘的樣板
 const LaunchCarpoolContainer = ({ data, _carpoolId, _driverId, onRefresh }) => {

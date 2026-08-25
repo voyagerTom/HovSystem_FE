@@ -1,8 +1,3 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { getCarpoolBySite } from "../hooks/UsePassenger";
-import CarpoolContainer from "../components/CarpoolContainer";
-
 const Passenger = () => {
   return (
     <div style={styles.container}>

@@ -1,11 +1,6 @@
-import React from "react";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import {
-  getCarpoolBySite,
-  checkMyCarpool,
-  orderCarpool,
-} from "../../hooks/UsePassenger";
+import { getCarpoolBySite, orderCarpool } from "../../hooks/UsePassenger";
 import CarpoolContainer from "../../components/CarpoolContainer";
 
 // 實作查詢共乘功能

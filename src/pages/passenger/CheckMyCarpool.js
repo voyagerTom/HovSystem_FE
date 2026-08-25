@@ -1,8 +1,6 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import {
   checkMyCarpool,
-  getCarpoolBySite,
   cancelOrderCarpoolById,
 } from "../../hooks/UsePassenger";
 import CarpoolContainer from "../../components/CarpoolContainer";

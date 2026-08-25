@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // 這作為導覽頁;// 控制各個下拉選單的狀態 (也可以合併成一個 state 管理)
 
 const Nav = () => {
